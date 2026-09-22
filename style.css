@@ -1,254 +1,223 @@
+/* CarterWiki Wikipedia Theme */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: sans-serif;
 }
 body {
-    background-color: #0b0c10;
-    color: #ffffff;
-    min-height: 100vh;
+    background-color: #f8f9fa;
+    color: #202122;
+    line-height: 1.6;
+    font-size: 14px;
+}
+.wiki-header {
+    background: #ffffff;
+    border-bottom: 1px solid #a2a9b1;
+    padding: 10px 30px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-x: hidden;
-}
-header {
-    text-align: center;
-    padding: 45px 20px 25px;
-    background: linear-gradient(180deg, rgba(255,51,102,0.2) 0%, rgba(11,12,16,0) 100%);
-    width: 100%;
-    border-bottom: 1px solid #1f2233;
-}
-h1 {
-    font-size: 3.5rem;
-    color: #ff3366;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 8px;
-    text-shadow: 0 0 25px rgba(255, 51, 102, 0.5);
-}
-.tagline {
-    font-size: 1.3rem;
-    color: #a5a5b5;
-    font-style: italic;
-}
-.container {
-    max-width: 1000px;
-    width: 90%;
-    margin: 30px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
+    justify-content: space-between;
     align-items: center;
 }
-.card {
-    background-color: #151722;
-    border: 2px solid #232738;
-    border-radius: 16px;
-    padding: 35px;
-    width: 100%;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.6);
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-.card:hover {
-    transform: translateY(-4px);
-    border-color: #ff3366;
-}
-.profile-section {
+.wiki-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    gap: 8px;
+}
+.wiki-logo span {
+    color: #3366cc;
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+.wiki-search {
+    background: #f8f9fa;
+    border: 1px solid #a2a9b1;
+    padding: 6px 12px;
+    border-radius: 2px;
+    color: #54595d;
+    font-size: 0.9rem;
+}
+
+.main-layout {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 220px 1fr 320px;
     gap: 30px;
-    text-align: left;
 }
-.avatar-container {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    border: 4px solid #ff3366;
-    overflow: hidden;
-    box-shadow: 0 0 30px rgba(255, 51, 102, 0.6);
-    background: #1f2233;
-    flex-shrink: 0;
+
+@media(max-width: 1000px) {
+    .main-layout {
+        grid-template-columns: 1fr;
+    }
+    .infobox {
+        float: none !important;
+        margin: 0 auto 20px !important;
+        width: 100% !important;
+    }
 }
-.avatar-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+/* Sidebar TOC */
+.sidebar-toc {
+    background: #f8f9fa;
+    border: 1px solid #a2a9b1;
+    padding: 15px;
+    border-radius: 2px;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
 }
-.bio {
-    flex: 1;
-    min-width: 280px;
+.sidebar-toc h3 {
+    font-size: 1rem;
+    border-bottom: 1px solid #a2a9b1;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
 }
-.bio h2 {
-    color: #fff;
-    margin-bottom: 12px;
-    font-size: 2rem;
+.sidebar-toc ul {
+    list-style: none;
+    padding-left: 0;
 }
-.bio p {
-    color: #b0b0c2;
-    line-height: 1.7;
-    font-size: 1.1rem;
+.sidebar-toc li {
+    margin: 8px 0;
+}
+.sidebar-toc a {
+    color: #0645ad;
+    text-decoration: none;
+}
+.sidebar-toc a:hover {
+    text-decoration: underline;
+}
+
+/* Article Content */
+.article-content {
+    background: #ffffff;
+    border: 1px solid #a2a9b1;
+    padding: 40px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.article-title {
+    font-family: 'Linux Libertine', Georgia, Times, serif;
+    font-size: 2.2rem;
+    font-weight: normal;
+    border-bottom: 1px solid #a2a9b1;
+    padding-bottom: 10px;
     margin-bottom: 15px;
 }
-.social-links {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-.social-btn {
-    background: #232738;
-    color: #ff3366;
-    padding: 8px 16px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
+.subtitle-meta {
     font-size: 0.9rem;
-    border: 1px solid #32374e;
-    transition: all 0.2s;
-}
-.social-btn:hover {
-    background: #ff3366;
-    color: white;
-    border-color: #ff3366;
+    color: #54595d;
+    margin-bottom: 25px;
 }
 
-/* Photo Gallery Section */
-.gallery-title {
-    text-align: center;
-    font-size: 1.8rem;
-    color: #fff;
-    margin-bottom: 5px;
-}
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    width: 100%;
-}
-.gallery-card {
-    background: #1f2233;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #2d3248;
-    transition: transform 0.2s;
-}
-.gallery-card:hover {
-    transform: scale(1.03);
-    border-color: #ff3366;
-}
-.gallery-img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-.gallery-caption {
-    padding: 15px;
-    text-align: center;
-    font-size: 1rem;
-    color: #d0d0e0;
-    font-weight: 500;
-}
-
-/* Mini Games & Tools */
-.tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    width: 100%;
-}
-.tool-card {
-    background: #151722;
-    border: 2px solid #232738;
-    border-radius: 16px;
-    padding: 25px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-}
-.tool-card h3 {
-    color: #ff3366;
+h2 {
+    font-family: 'Linux Libertine', Georgia, Times, serif;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #eaecf0;
+    padding-bottom: 4px;
+    margin-top: 30px;
     margin-bottom: 12px;
-    font-size: 1.3rem;
+    font-weight: normal;
 }
-.tool-card p {
-    color: #9a9ab0;
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-.btn {
-    background-color: #ff3366;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
-    box-shadow: 0 4px 15px rgba(255, 51, 102, 0.3);
-    width: 100%;
-}
-.btn:hover {
-    background-color: #e02e5a;
-    transform: translateY(-2px);
-}
-.output-box {
-    margin-top: 15px;
-    padding: 12px;
-    background: #1f2233;
-    border-radius: 8px;
-    color: #fff;
-    font-weight: 600;
-    font-size: 0.95rem;
-    min-height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px dashed #3a3f5c;
-}
-
-/* Quotes Ticker */
-.quote-banner {
-    background: linear-gradient(135deg, #1f2233 0%, #151722 100%);
-    border-left: 6px solid #ff3366;
-    padding: 20px 25px;
-    border-radius: 12px;
-    width: 100%;
-    text-align: center;
-}
-.quote-banner p {
+h3 {
     font-size: 1.2rem;
-    font-style: italic;
-    color: #e0e0f0;
+    margin-top: 20px;
     margin-bottom: 8px;
 }
-.quote-banner span {
-    font-size: 0.9rem;
-    color: #ff3366;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+ul {
+    margin-bottom: 15px;
+    padding-left: 25px;
+}
+li {
+    margin-bottom: 5px;
 }
 
-footer {
-    margin-top: auto;
-    padding: 35px;
-    text-align: center;
-    color: #606075;
+/* Infobox */
+.infobox {
+    float: right;
+    clear: right;
+    width: 300px;
+    border: 1px solid #a2a9b1;
+    background: #f8f9fa;
+    padding: 10px;
+    margin: 0 0 20px 20px;
     font-size: 0.9rem;
-    border-top: 1px solid #1f2233;
-    width: 100%;
 }
-footer a {
-    color: #ff3366;
+.infobox-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    background: #eaecf0;
+    padding: 8px;
+    border-bottom: 1px solid #a2a9b1;
+    margin-bottom: 10px;
+}
+.infobox-image {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.infobox-image img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+}
+.infobox-caption {
+    font-size: 0.85rem;
+    text-align: center;
+    color: #54595d;
+    margin-bottom: 10px;
+}
+.infobox table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.infobox th, .infobox td {
+    padding: 6px;
+    border-bottom: 1px solid #eaecf0;
+    vertical-align: top;
+}
+.infobox th {
+    text-align: left;
+    width: 35%;
+    color: #202122;
+}
+
+/* References / Footer */
+.references-section {
+    margin-top: 40px;
+    border-top: 1px solid #a2a9b1;
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+.references-section ol {
+    padding-left: 20px;
+    color: #54595d;
+}
+.references-section a {
+    color: #0645ad;
+}
+
+.wiki-footer {
+    text-align: center;
+    padding: 30px;
+    color: #54595d;
+    font-size: 0.85rem;
+    border-top: 1px solid #a2a9b1;
+    background: #ffffff;
+    margin-top: 40px;
+}
+.wiki-footer a {
+    color: #0645ad;
     text-decoration: none;
 }
-footer a:hover {
+.wiki-footer a:hover {
     text-decoration: underline;
 }
