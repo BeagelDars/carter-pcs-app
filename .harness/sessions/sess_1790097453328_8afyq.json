@@ -1,0 +1,24 @@
+{
+  "id": "sess_1790097453328_8afyq",
+  "title": "ccreate a new app where its jsut a we...",
+  "created_at": 1790097453.3294768,
+  "updated_at": 1790099476.9237003,
+  "workspace": "C:\\Users\\User\\Downloads\\bobobobob",
+  "model": "gemini-3.6-flash",
+  "mode": "auto",
+  "message_count": 2,
+  "messages": [
+    {
+      "role": "user",
+      "content": "ccreate a new app where its jsut a web app wher eu can see a bob then deploy it to git",
+      "attachments": [],
+      "timestamp": 1790097453.329
+    },
+    {
+      "role": "user",
+      "content": "create a new app where its jsut a web app wher eu can see a bob then deploy it to git",
+      "attachments": [],
+      "timestamp": 1790099476.922
+    }
+  ]
+}
