@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carter PCs - Making Tech Less of a Snooze Fest</title>
+    <title>Carter PCs - Ultimate Fan Hub & Tech Zone</title>
     <style>
         * {
             box-sizing: border-box;
@@ -12,7 +12,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
-            background-color: #0f1015;
+            background-color: #0b0c10;
             color: #ffffff;
             min-height: 100vh;
             display: flex;
@@ -22,135 +22,234 @@
         }
         header {
             text-align: center;
-            padding: 40px 20px 20px;
-            background: linear-gradient(180deg, rgba(255,51,102,0.15) 0%, rgba(15,16,21,0) 100%);
+            padding: 45px 20px 25px;
+            background: linear-gradient(180deg, rgba(255,51,102,0.2) 0%, rgba(11,12,16,0) 100%);
             width: 100%;
+            border-bottom: 1px solid #1f2233;
         }
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: #ff3366;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-            text-shadow: 0 0 20px rgba(255, 51, 102, 0.4);
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+            text-shadow: 0 0 25px rgba(255, 51, 102, 0.5);
         }
         .tagline {
-            font-size: 1.2rem;
-            color: #a0a0b0;
+            font-size: 1.3rem;
+            color: #a5a5b5;
             font-style: italic;
         }
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             width: 90%;
             margin: 30px auto;
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 35px;
             align-items: center;
         }
         .card {
-            background-color: #1a1b26;
-            border: 2px solid #2a2b3d;
+            background-color: #151722;
+            border: 2px solid #232738;
             border-radius: 16px;
-            padding: 30px;
+            padding: 35px;
             width: 100%;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.6);
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
             border-color: #ff3366;
         }
         .profile-section {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             align-items: center;
-            text-align: center;
-            gap: 20px;
+            justify-content: center;
+            gap: 30px;
+            text-align: left;
         }
         .avatar-container {
-            width: 160px;
-            height: 160px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             border: 4px solid #ff3366;
             overflow: hidden;
-            box-shadow: 0 0 25px rgba(255, 51, 102, 0.5);
-            background: #252636;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            box-shadow: 0 0 30px rgba(255, 51, 102, 0.6);
+            background: #1f2233;
+            flex-shrink: 0;
         }
         .avatar-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+        .bio {
+            flex: 1;
+            min-width: 280px;
+        }
         .bio h2 {
             color: #fff;
-            margin-bottom: 10px;
-            font-size: 1.8rem;
+            margin-bottom: 12px;
+            font-size: 2rem;
         }
         .bio p {
-            color: #b0b0c0;
-            line-height: 1.6;
-            font-size: 1.05rem;
-            max-width: 700px;
+            color: #b0b0c2;
+            line-height: 1.7;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
         }
-        .features-grid {
+        .social-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .social-btn {
+            background: #232738;
+            color: #ff3366;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            border: 1px solid #32374e;
+            transition: all 0.2s;
+        }
+        .social-btn:hover {
+            background: #ff3366;
+            color: white;
+            border-color: #ff3366;
+        }
+
+        /* Photo Gallery Section */
+        .gallery-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
             width: 100%;
         }
-        .feature-box {
-            background: #222333;
-            padding: 20px;
+        .gallery-card {
+            background: #1f2233;
             border-radius: 12px;
-            border-left: 4px solid #ff3366;
+            overflow: hidden;
+            border: 1px solid #2d3248;
+            transition: transform 0.2s;
         }
-        .feature-box h3 {
-            color: #ff3366;
-            margin-bottom: 8px;
-            font-size: 1.2rem;
+        .gallery-card:hover {
+            transform: scale(1.03);
+            border-color: #ff3366;
         }
-        .feature-box p {
-            color: #9090a0;
-            font-size: 0.95rem;
-            line-height: 1.4;
+        .gallery-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
         }
-        .soundboard {
+        .gallery-caption {
+            padding: 15px;
             text-align: center;
+            font-size: 1rem;
+            color: #d0d0e0;
+            font-weight: 500;
         }
-        .soundboard h3 {
-            margin-bottom: 15px;
-            color: #fff;
+
+        /* Mini Games & Tools */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            width: 100%;
+        }
+        .tool-card {
+            background: #151722;
+            border: 2px solid #232738;
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+        .tool-card h3 {
+            color: #ff3366;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+        .tool-card p {
+            color: #9a9ab0;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
         }
         .btn {
             background-color: #ff3366;
             color: white;
             border: none;
-            padding: 12px 24px;
+            padding: 12px 20px;
             font-size: 1rem;
             font-weight: bold;
             border-radius: 8px;
             cursor: pointer;
             transition: background 0.2s, transform 0.1s;
             box-shadow: 0 4px 15px rgba(255, 51, 102, 0.3);
+            width: 100%;
         }
         .btn:hover {
             background-color: #e02e5a;
-            transform: scale(1.05);
+            transform: translateY(-2px);
         }
-        .btn:active {
-            transform: scale(0.98);
+        .output-box {
+            margin-top: 15px;
+            padding: 12px;
+            background: #1f2233;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed #3a3f5c;
         }
+
+        /* Quotes Ticker */
+        .quote-banner {
+            background: linear-gradient(135deg, #1f2233 0%, #151722 100%);
+            border-left: 6px solid #ff3366;
+            padding: 20px 25px;
+            border-radius: 12px;
+            width: 100%;
+            text-align: center;
+        }
+        .quote-banner p {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #e0e0f0;
+            margin-bottom: 8px;
+        }
+        .quote-banner span {
+            font-size: 0.9rem;
+            color: #ff3366;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         footer {
             margin-top: auto;
-            padding: 30px;
+            padding: 35px;
             text-align: center;
-            color: #606070;
+            color: #606075;
             font-size: 0.9rem;
-            border-top: 1px solid #1a1b26;
+            border-top: 1px solid #1f2233;
             width: 100%;
         }
         footer a {
@@ -166,7 +265,7 @@
 
     <header>
         <h1>Carter PCs</h1>
-        <div class="tagline">Making tech less of a snooze fest! 🚀</div>
+        <div class="tagline">Making tech less of a snooze fest! 🚀⚡</div>
     </header>
 
     <div class="container">
@@ -174,56 +273,135 @@
         <div class="card">
             <div class="profile-section">
                 <div class="avatar-container">
-                    <!-- High quality tech aesthetic portrait placeholder or Carter PCs wiki image -->
-                    <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80" alt="Carter PCs Tech Setup">
+                    <!-- Carter setup / persona portrait -->
+                    <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&w=500&q=80" alt="Carter PCs Tech Studio">
                 </div>
                 <div class="bio">
-                    <h2>The Legend Himself</h2>
-                    <p>Carter Ryan Smith, better known as <strong>CarterPCs</strong>, is your favorite high-energy tech content creator dominating YouTube, TikTok, and Instagram. Known for lightning-fast reviews, honest PC building advice, and keeping consumer tech ridiculously entertaining.</p>
+                    <h2>The Tech Guru Himself</h2>
+                    <p>Carter Ryan Smith (CarterPCs) is the internet's favorite fast-talking, highly energetic tech reviewer and PC builder. He breaks down complicated hardware specs, roasts bad prebuilts, and keeps millions entertained with pure enthusiasm.</p>
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/@CarterPC." target="_blank" class="social-btn">📺 YouTube</a>
+                        <a href="https://www.tiktok.com/@carterpcs" target="_blank" class="social-btn">🎵 TikTok</a>
+                        <a href="https://www.instagram.com/carterpcs/" target="_blank" class="social-btn">📸 Instagram</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Highlights Grid -->
-        <div class="features-grid">
-            <div class="feature-box">
-                <h3>⚡ Fast & Engaging</h3>
-                <p>Turning boring specs and benchmark charts into high-octane short-form entertainment.</p>
-            </div>
-            <div class="feature-box">
-                <h3>💻 Honest Reviews</h3>
-                <p>No corporate fluff—just real talk about what prebuilt or custom PC is actually worth your money.</p>
-            </div>
-            <div class="feature-box">
-                <h3>🔥 Viral Creator</h3>
-                <p>Millions of views across platforms with the ultimate mission to make tech accessible to everyone.</p>
+        <!-- Photo Gallery -->
+        <div style="width: 100%;">
+            <h2 class="gallery-title" style="margin-bottom: 20px;">📸 The Carter PCs Experience Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=500&q=80" alt="RGB Setup" class="gallery-img">
+                    <div class="gallery-caption">Max RGB Overdrive</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=500&q=80" alt="Clean Rig" class="gallery-img">
+                    <div class="gallery-caption">Zero Cable Gore</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=500&q=80" alt="Hacking Matrix" class="gallery-img">
+                    <div class="gallery-caption">Extreme Benchmark Stress Test</div>
+                </div>
             </div>
         </div>
 
-        <!-- Interactive Vibe Check Card -->
-        <div class="card soundboard">
-            <h3>Ready for a Tech Vibe Check?</h3>
-            <p style="color: #a0a0b0; margin-bottom: 20px;">Click below to test your setup's aura.</p>
-            <button class="btn" onclick="vibeCheck()">Run Vibe Check</button>
-            <p id="vibe-result" style="margin-top: 20px; font-weight: bold; color: #ff3366; font-size: 1.1rem;"></p>
+        <!-- Quote Banner -->
+        <div class="quote-banner">
+            <p id="quote-text">"If your PC doesn't glow in the dark, are you even gaming?"</p>
+            <span>— Carter PCs Wisdom</span>
+        </div>
+
+        <!-- Interactive Tools Grid -->
+        <div class="tools-grid">
+            <!-- Tool 1 -->
+            <div class="tool-card">
+                <div>
+                    <h3>⚡ Setup Vibe Check</h3>
+                    <p>Get an instant, brutally honest AI review of your current PC setup.</p>
+                </div>
+                <div>
+                    <button class="btn" onclick="runVibeCheck()">Check My Vibe</button>
+                    <div id="vibe-output" class="output-box">Click button to test...</div>
+                </div>
+            </div>
+
+            <!-- Tool 2 -->
+            <div class="tool-card">
+                <div>
+                    <h3>🎮 Game FPS Predictor</h3>
+                    <p>Instantly estimate your framrates based on your current setup mood.</p>
+                </div>
+                <div>
+                    <button class="btn" onclick="predictFps()">Calculate FPS</button>
+                    <div id="fps-output" class="output-box">Click button to calculate...</div>
+                </div>
+            </div>
+
+            <!-- Tool 3 -->
+            <div class="tool-card">
+                <div>
+                    <h3>💡 Random Tech Roast</h3>
+                    <p>Have your life choices or hardware evaluated by the master.</p>
+                </div>
+                <div>
+                    <button class="btn" onclick="generateRoast()">Get Roasted</button>
+                    <div id="roast-output" class="output-box">Click button for roast...</div>
+                </div>
+            </div>
         </div>
     </div>
 
     <footer>
-        <p>Fan-made tribute web app for <a href="https://www.youtube.com/@CarterPC." target="_blank">CarterPCs</a>. Built with pure web tech.</p>
+        <p>Fan-made tribute web app for <a href="https://www.youtube.com/@CarterPC." target="_blank">CarterPCs</a>. Deployed live on GitHub Pages.</p>
     </footer>
 
     <script>
-        function vibeCheck() {
+        const quotes = [
+            `"If your PC doesn't glow in the dark, are you even gaming?"`,
+            `"Cable management is like flossing: everyone knows they should do it, but nobody actually does."`,
+            `"Buying a prebuilt without checking specs first is wild!"`,
+            `"More RGB equals at least 15% extra framerate, it's science."`
+        ];
+
+        let quoteIndex = 0;
+        setInterval(() => {
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+            document.getElementById('quote-text').innerText = quotes[quoteIndex];
+        }, 5000);
+
+        function runVibeCheck() {
             const results = [
-                "🔥 Absolute beast of a setup! RGB is working overtime!",
-                "⚠️ Warning: Your cable management is giving everyone anxiety.",
-                "✅ Approved! Carter PCs would definitely rate this setup 10/10.",
-                "❄️ Ice cold temps, zero bottleneck. You're ready to game!",
-                "💥 Needs more fans and definitely more RGB!"
+                "🔥 Absolute beast! RGB is blinding from space.",
+                "⚠️ Warning: Your cable management is making Carter cry.",
+                "✅ Approved! 10/10 airflow and zero bottleneck.",
+                "❄️ Ice cold temps, ready for 4K ultra gaming!",
+                "💥 Needs more fans and definitely more stickers!"
             ];
-            const randomIndex = Math.floor(Math.random() * results.length);
-            document.getElementById("vibe-result").innerText = results[randomIndex];
+            document.getElementById("vibe-output").innerText = results[Math.floor(Math.random() * results.length)];
+        }
+
+        function predictFps() {
+            const fpsValues = [
+                "🚀 360+ FPS on Cyberpunk Ultra settings!",
+                "⚡ 240 FPS locked solid. Smooth as butter.",
+                "🖥️ 144 FPS in 14K resolution. Not bad!",
+                "💨 60 FPS cinematic experience (console tears).",
+                "🔥 500 FPS in Minecraft with shaders!"
+            ];
+            document.getElementById("fps-output").innerText = fpsValues[Math.floor(Math.random() * fpsValues.length)];
+        }
+
+        function generateRoast() {
+            const roasts = [
+                "Bro is gaming on a literal microwave from 2012.",
+                "You spent $3,000 on a GPU just to play Roblox.",
+                "That stock CPU cooler is screaming for mercy.",
+                "Your mousepad has more dust than my grandmother's attic.",
+                "Bro's monitor stand is literally a stack of textbooks."
+            ];
+            document.getElementById("roast-output").innerText = roasts[Math.floor(Math.random() * roasts.length)];
         }
     </script>
 </body>
