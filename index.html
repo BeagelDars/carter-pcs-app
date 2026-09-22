@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carter PCs - Making Tech Less of a Snooze Fest</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #0f1015;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px 20px;
+            background: linear-gradient(180deg, rgba(255,51,102,0.15) 0%, rgba(15,16,21,0) 100%);
+            width: 100%;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #ff3366;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(255, 51, 102, 0.4);
+        }
+        .tagline {
+            font-size: 1.2rem;
+            color: #a0a0b0;
+            font-style: italic;
+        }
+        .container {
+            max-width: 900px;
+            width: 90%;
+            margin: 30px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+        .card {
+            background-color: #1a1b26;
+            border: 2px solid #2a2b3d;
+            border-radius: 16px;
+            padding: 30px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #ff3366;
+        }
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+        .avatar-container {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid #ff3366;
+            overflow: hidden;
+            box-shadow: 0 0 25px rgba(255, 51, 102, 0.5);
+            background: #252636;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .avatar-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .bio h2 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        .bio p {
+            color: #b0b0c0;
+            line-height: 1.6;
+            font-size: 1.05rem;
+            max-width: 700px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+        .feature-box {
+            background: #222333;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #ff3366;
+        }
+        .feature-box h3 {
+            color: #ff3366;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+        .feature-box p {
+            color: #9090a0;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        .soundboard {
+            text-align: center;
+        }
+        .soundboard h3 {
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        .btn {
+            background-color: #ff3366;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 15px rgba(255, 51, 102, 0.3);
+        }
+        .btn:hover {
+            background-color: #e02e5a;
+            transform: scale(1.05);
+        }
+        .btn:active {
+            transform: scale(0.98);
+        }
+        footer {
+            margin-top: auto;
+            padding: 30px;
+            text-align: center;
+            color: #606070;
+            font-size: 0.9rem;
+            border-top: 1px solid #1a1b26;
+            width: 100%;
+        }
+        footer a {
+            color: #ff3366;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Carter PCs</h1>
+        <div class="tagline">Making tech less of a snooze fest! 🚀</div>
+    </header>
+
+    <div class="container">
+        <!-- Profile Card -->
+        <div class="card">
+            <div class="profile-section">
+                <div class="avatar-container">
+                    <!-- High quality tech aesthetic portrait placeholder or Carter PCs wiki image -->
+                    <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80" alt="Carter PCs Tech Setup">
+                </div>
+                <div class="bio">
+                    <h2>The Legend Himself</h2>
+                    <p>Carter Ryan Smith, better known as <strong>CarterPCs</strong>, is your favorite high-energy tech content creator dominating YouTube, TikTok, and Instagram. Known for lightning-fast reviews, honest PC building advice, and keeping consumer tech ridiculously entertaining.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Highlights Grid -->
+        <div class="features-grid">
+            <div class="feature-box">
+                <h3>⚡ Fast & Engaging</h3>
+                <p>Turning boring specs and benchmark charts into high-octane short-form entertainment.</p>
+            </div>
+            <div class="feature-box">
+                <h3>💻 Honest Reviews</h3>
+                <p>No corporate fluff—just real talk about what prebuilt or custom PC is actually worth your money.</p>
+            </div>
+            <div class="feature-box">
+                <h3>🔥 Viral Creator</h3>
+                <p>Millions of views across platforms with the ultimate mission to make tech accessible to everyone.</p>
+            </div>
+        </div>
+
+        <!-- Interactive Vibe Check Card -->
+        <div class="card soundboard">
+            <h3>Ready for a Tech Vibe Check?</h3>
+            <p style="color: #a0a0b0; margin-bottom: 20px;">Click below to test your setup's aura.</p>
+            <button class="btn" onclick="vibeCheck()">Run Vibe Check</button>
+            <p id="vibe-result" style="margin-top: 20px; font-weight: bold; color: #ff3366; font-size: 1.1rem;"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Fan-made tribute web app for <a href="https://www.youtube.com/@CarterPC." target="_blank">CarterPCs</a>. Built with pure web tech.</p>
+    </footer>
+
+    <script>
+        function vibeCheck() {
+            const results = [
+                "🔥 Absolute beast of a setup! RGB is working overtime!",
+                "⚠️ Warning: Your cable management is giving everyone anxiety.",
+                "✅ Approved! Carter PCs would definitely rate this setup 10/10.",
+                "❄️ Ice cold temps, zero bottleneck. You're ready to game!",
+                "💥 Needs more fans and definitely more RGB!"
+            ];
+            const randomIndex = Math.floor(Math.random() * results.length);
+            document.getElementById("vibe-result").innerText = results[randomIndex];
+        }
+    </script>
+</body>
+</html>
