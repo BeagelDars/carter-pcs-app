@@ -1,68 +1,86 @@
-/* CarterWiki Wikipedia Theme */
+/* Authentic Wikipedia Light Theme (Vector skin style) */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Lato, Helvetica, Arial, sans-serif;
 }
+
 body {
-    background-color: #f8f9fa;
+    background-color: #ffffff;
     color: #202122;
     line-height: 1.6;
     font-size: 14px;
+    margin: 0;
+    padding: 0;
 }
+
+/* Top Wikipedia Header */
 .wiki-header {
     background: #ffffff;
     border-bottom: 1px solid #a2a9b1;
-    padding: 10px 30px;
+    padding: 12px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 .wiki-logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-family: 'Linux Libertine', Georgia, Times, serif;
+    font-size: 1.6rem;
+    font-weight: normal;
     color: #000;
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 .wiki-logo span {
-    color: #3366cc;
-    font-size: 0.9rem;
-    font-weight: normal;
+    color: #54595d;
+    font-size: 0.85rem;
+    font-style: italic;
+    font-family: sans-serif;
 }
-.wiki-search {
+.wiki-search-box {
     background: #f8f9fa;
     border: 1px solid #a2a9b1;
-    padding: 6px 12px;
+    padding: 6px 14px;
     border-radius: 2px;
     color: #54595d;
     font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
+/* Main Layout */
 .main-layout {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 25px 30px;
     display: grid;
-    grid-template-columns: 220px 1fr 320px;
-    gap: 30px;
+    grid-template-columns: 240px 1fr 300px;
+    gap: 40px;
 }
 
-@media(max-width: 1000px) {
+@media(max-width: 1024px) {
     .main-layout {
         grid-template-columns: 1fr;
     }
     .infobox {
         float: none !important;
-        margin: 0 auto 20px !important;
+        margin: 0 auto 25px auto !important;
         width: 100% !important;
+        max-width: 400px;
+    }
+    .sidebar-toc {
+        display: none;
     }
 }
 
-/* Sidebar TOC */
+/* Sidebar Table of Contents */
 .sidebar-toc {
     background: #f8f9fa;
     border: 1px solid #a2a9b1;
@@ -70,13 +88,15 @@ body {
     border-radius: 2px;
     height: fit-content;
     position: sticky;
-    top: 20px;
+    top: 80px;
 }
 .sidebar-toc h3 {
-    font-size: 1rem;
+    font-size: 0.95rem;
     border-bottom: 1px solid #a2a9b1;
-    padding-bottom: 5px;
+    padding-bottom: 6px;
     margin-bottom: 10px;
+    font-weight: bold;
+    color: #202122;
 }
 .sidebar-toc ul {
     list-style: none;
@@ -84,6 +104,7 @@ body {
 }
 .sidebar-toc li {
     margin: 8px 0;
+    font-size: 0.9rem;
 }
 .sidebar-toc a {
     color: #0645ad;
@@ -96,20 +117,19 @@ body {
 /* Article Content */
 .article-content {
     background: #ffffff;
-    border: 1px solid #a2a9b1;
-    padding: 40px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    padding: 0 10px;
 }
 .article-title {
     font-family: 'Linux Libertine', Georgia, Times, serif;
-    font-size: 2.2rem;
+    font-size: 2.3rem;
     font-weight: normal;
     border-bottom: 1px solid #a2a9b1;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+    color: #000;
 }
 .subtitle-meta {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #54595d;
     margin-bottom: 25px;
 }
@@ -119,37 +139,35 @@ h2 {
     font-size: 1.5rem;
     border-bottom: 1px solid #eaecf0;
     padding-bottom: 4px;
-    margin-top: 30px;
+    margin-top: 35px;
     margin-bottom: 12px;
     font-weight: normal;
-}
-h3 {
-    font-size: 1.2rem;
-    margin-top: 20px;
-    margin-bottom: 8px;
+    color: #202122;
 }
 p {
     margin-bottom: 15px;
     text-align: justify;
+    color: #202122;
 }
 ul {
     margin-bottom: 15px;
     padding-left: 25px;
 }
 li {
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
-/* Infobox */
+/* Infobox Styling (Wikipedia Vector style) */
 .infobox {
     float: right;
     clear: right;
-    width: 300px;
+    width: 280px;
     border: 1px solid #a2a9b1;
     background: #f8f9fa;
-    padding: 10px;
-    margin: 0 0 20px 20px;
-    font-size: 0.9rem;
+    padding: 8px;
+    margin: 0 0 20px 25px;
+    font-size: 0.88rem;
+    border-spacing: 0;
 }
 .infobox-title {
     text-align: center;
@@ -158,39 +176,43 @@ li {
     background: #eaecf0;
     padding: 8px;
     border-bottom: 1px solid #a2a9b1;
-    margin-bottom: 10px;
+    margin: -8px -8px 8px -8px;
 }
 .infobox-image {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 .infobox-image img {
     max-width: 100%;
     height: auto;
-    border: 1px solid #ccc;
+    border: 1px solid #c8ccd1;
 }
 .infobox-caption {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     text-align: center;
     color: #54595d;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 .infobox table {
     width: 100%;
     border-collapse: collapse;
 }
 .infobox th, .infobox td {
-    padding: 6px;
+    padding: 6px 8px;
     border-bottom: 1px solid #eaecf0;
     vertical-align: top;
+    text-align: left;
 }
 .infobox th {
-    text-align: left;
-    width: 35%;
+    font-weight: bold;
+    color: #202122;
+    width: 38%;
+}
+.infobox td {
     color: #202122;
 }
 
-/* References / Footer */
+/* References */
 .references-section {
     margin-top: 40px;
     border-top: 1px solid #a2a9b1;
@@ -203,16 +225,21 @@ li {
 }
 .references-section a {
     color: #0645ad;
+    text-decoration: none;
+}
+.references-section a:hover {
+    text-decoration: underline;
 }
 
+/* Wikipedia Footer */
 .wiki-footer {
     text-align: center;
     padding: 30px;
     color: #54595d;
     font-size: 0.85rem;
     border-top: 1px solid #a2a9b1;
-    background: #ffffff;
-    margin-top: 40px;
+    background: #f8f9fa;
+    margin-top: 50px;
 }
 .wiki-footer a {
     color: #0645ad;
